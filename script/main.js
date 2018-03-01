@@ -50,9 +50,13 @@ function initApp(){
 
     //ABOUT PAGE
     PageController.addPage(new Page($("#About"), 1, function(){
-        alert("init");
+        $(".aboutParagraph").animate({
+            "opacity": 1
+        }, 600);
     }, function(){
-        alert("deinit");
+        $(".aboutParagraph").animate({
+            "opacity": 0
+        }, 600);
     }));
 
     //EXPERIENCES PAGE

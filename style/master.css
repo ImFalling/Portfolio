@@ -1,20 +1,20 @@
-/* Color Palette */
-/*
-    (Dark) Void: #0E0B16
-    (Bright) Stark: #E7DFDD
-    (Magenta) Fuschia: #A239CA
-    (Dark Blue) Jewel: #4717F6
-*/
+:root{
+    /* Color Palette */
+    --dark: #0F1626;
+    --bright: #F6F6F6;
+    --beige: #AB987A;
+    --red: #FF533D;
+}
 
 html, body{
     margin: 0;
     padding: 0;
     /*Overshot by 1 unit due to weird floating bug.*/
-    width: 501vw;
+    width: 520vw;
     height: 100vh;
     /*To prevent user scrolling and a tippy bug*/
     overflow-x: hidden;
-    background-color: #4717F6;
+    background-color: var(--red);
 }
 
 *{
@@ -24,7 +24,6 @@ html, body{
 main{
     width: 100%;
     height: 100vh;
-    overflow-y: scroll;
     display: block;
     float: left;
     position: relative;
@@ -46,8 +45,8 @@ nav .navHeader{
     width: 100%;
     height: 30%;
     border-bottom: 2px solid black;
-    background-color: #0E0B16;
-    box-shadow: inset 0px 0px 2px 2px #4717F6;
+    background-color: var(--dark);
+    box-shadow: inset 0px 0px 2px 2px var(--red);
 }
 
 nav .navButtonContainer{
@@ -56,8 +55,8 @@ nav .navButtonContainer{
 }
 
 nav .navButton {
-    background-color: #0E0B16;
-    color: #E7DFDD;
+    background-color: var(--dark);
+    color: var(--bright);
     height: calc((100% /  5));
     text-align: center;
     border-bottom: 2px solid black;
@@ -80,7 +79,7 @@ nav .navButton.selected {
 
 nav .navButton:hover {
     transform: translateX(5px);
-    filter: drop-shadow(-5px 0px 0px #4717F6);
+    filter: drop-shadow(-5px 0px 0px var(--red));
 }
 
 main section{
@@ -89,12 +88,13 @@ main section{
     width: 100vw;
     height: 100vh;
     float: left;
+    overflow-y: hidden;
 }
 
 /* HOME PAGE */
 
 main #Home{
-    background-color: #0E0B16;
+    background-color: var(--dark);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +107,7 @@ main #Home .container{
 main #Home h1{
     font-family: "Lobster";
     font-size: 50px;
-    color: #E7DFDD;
+    color: var(--bright);
     width: 100%;
     text-align: center;
     margin: 0;
@@ -118,7 +118,7 @@ main #Home h1{
 main #Home h2{
     font-family: Quicksand;
     font-weight: bold;
-    color: #E7DFDD;
+    color: var(--bright);
     text-align: center;
     margin: 0;
     filter: drop-shadow(0px 0px 3px black);
@@ -157,15 +157,71 @@ main #Home .quickContact.linkedIn{
 }
 
 main #Home .quickContact.gitHub{
-    background-color: #E7DFDD;
+    background-color: var(--bright);
 }
 
 main #Home .quickContact.mail{
-    background-color: #E7DFDD;
+    background-color: var(--bright);
 }
 
 /* ABOUT PAGE */
 
+main #About{
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+main #About .aboutParagraph{
+    width: 50vw;
+    font-family: SourceSans;
+    color: var(--bright);
+    opacity: 0;
+}
+
+main #About .aboutParagraph p{
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--beige);
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
 main #About h1{
-    font-family: "Lobster";
+    font-family: "Quicksand";
+    color: var(--bright);
+    font-size: 28px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--red);
+}
+
+/* EXPERIENCES PAGE */
+
+main #Experiences {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #Experiences .aboutParagraph {
+    width: 50vw;
+    font-family: SourceSans;
+    color: var(--bright);
+    opacity: 0;
+}
+
+main #Experiences .aboutParagraph p {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--beige);
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+main #Experiences h1 {
+    font-family: "Quicksand";
+    color: var(--bright);
+    font-size: 28px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--red);
 }
