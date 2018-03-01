@@ -9,8 +9,12 @@
 html, body{
     margin: 0;
     padding: 0;
-    width: 100vw;
+    /*Overshot by 1 unit due to weird floating bug.*/
+    width: 501vw;
     height: 100vh;
+    /*To prevent user scrolling and a tippy bug*/
+    overflow-x: hidden;
+    background-color: #4717F6;
 }
 
 *{
@@ -18,10 +22,12 @@ html, body{
 }
 
 main{
-    margin-left: 15vw;
-    width: 85vw;
+    width: 100%;
     height: 100vh;
     overflow-y: scroll;
+    display: block;
+    float: left;
+    position: relative;
 }
 
 nav{
@@ -31,29 +37,33 @@ nav{
     width: 15vw;
     height: 100%;
     background-color: rgb(0, 0, 0);
+    filter: drop-shadow(1px 0px 2px black);
+    font-family: "Quicksand";
+    z-index:2;
 }
 
 nav .navHeader{
     width: 100%;
-    height: 25%;
-    border-bottom: 1px solid #E7DFDD;
+    height: 30%;
+    border-bottom: 2px solid black;
     background-color: #0E0B16;
+    box-shadow: inset 0px 0px 2px 2px #4717F6;
 }
 
 nav .navButtonContainer{
     width: 100%;
-    height: 75%;
+    height: 70%;
 }
 
 nav .navButton {
     background-color: #0E0B16;
     color: #E7DFDD;
-    height: calc((100% /  6));
+    height: calc((100% /  5));
     text-align: center;
-    border-bottom: 1px solid #E7DFDD;
+    border-bottom: 2px solid black;
     cursor: pointer;
     font-size: 15px;
-    transition: 0.2s;
+    transition: transform 0.2s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,19 +74,98 @@ nav .navButton {
 
 nav .navButton.selected {
     font-weight: bold;
-    height: calc((100% /  6));
     text-align: center;
-    border-bottom: 1px solid #E7DFDD;
-    font-size: 15px;
-    transition: 0.2s;
     font-size: 17px;
 }
 
 nav .navButton:hover {
     transform: translateX(5px);
-    height: calc((100% /  6));
-    text-align: center;
-    border-bottom: 1px solid #E7DFDD;
-    cursor: pointer;
     filter: drop-shadow(-5px 0px 0px #4717F6);
+}
+
+main section{
+    display: block;
+    padding-left: 15vw;
+    width: 100vw;
+    height: 100vh;
+    float: left;
+}
+
+/* HOME PAGE */
+
+main #Home{
+    background-color: #0E0B16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #Home .container{
+    display: block;
+}
+
+main #Home h1{
+    font-family: "Lobster";
+    font-size: 50px;
+    color: #E7DFDD;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 35px;
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+main #Home h2{
+    font-family: Quicksand;
+    font-weight: bold;
+    color: #E7DFDD;
+    text-align: center;
+    margin: 0;
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+main #Home .quickContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 100%;
+    opacity: 0;
+}
+
+main #Home .quickContact{
+    width: 15vw;
+    height: 15vw;
+    float: left;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+    transform: scale(1.0);
+    transition: 0.1s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #Home .quickContact:hover{
+    transform: scale(1.05);
+}
+
+main #Home .quickContact.linkedIn{
+    background-color: #007BB5;
+}
+
+main #Home .quickContact.gitHub{
+    background-color: #E7DFDD;
+}
+
+main #Home .quickContact.mail{
+    background-color: #E7DFDD;
+}
+
+/* ABOUT PAGE */
+
+main #About h1{
+    font-family: "Lobster";
 }

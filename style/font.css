@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Lobster;
+    src: url(../resources/font/Lobster-Regular.ttf);
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url(../resources/font/Quicksand-Regular.ttf);
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url(../resources/font/Quicksand-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: SourceSans;
+    src: url(../resources/font/SourceSansPro-Regular.ttf);
+}
