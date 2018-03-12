@@ -4,13 +4,14 @@
     --bright: #F6F6F6;
     --beige: #AB987A;
     --red: #FF533D;
+    --blue: rgb(61, 113, 255);
 }
 
 html, body{
     margin: 0;
     padding: 0;
     /*Overshot by 1 unit due to weird floating bug.*/
-    width: 520vw;
+    width: 420vw;
     height: 100vh;
     /*To prevent user scrolling and a tippy bug*/
     overflow-x: hidden;
@@ -38,7 +39,7 @@ nav{
     background-color: rgb(0, 0, 0);
     filter: drop-shadow(1px 0px 2px black);
     font-family: "Quicksand";
-    z-index:2;
+    z-index:2000;
 }
 
 nav .navHeader{
@@ -47,6 +48,12 @@ nav .navHeader{
     border-bottom: 2px solid black;
     background-color: var(--dark);
     box-shadow: inset 0px 0px 2px 2px var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Lobster;
+    font-size: 5vw;
 }
 
 nav .navButtonContainer{
@@ -57,7 +64,7 @@ nav .navButtonContainer{
 nav .navButton {
     background-color: var(--dark);
     color: var(--bright);
-    height: calc((100% /  5));
+    height: calc((100% /  4));
     text-align: center;
     border-bottom: 2px solid black;
     cursor: pointer;
@@ -171,6 +178,7 @@ main #About{
     display: flex;
     justify-content: center;
     overflow-y: scroll;
+    padding-top: 10vh;
 }
 
 main #About .aboutParagraph{
@@ -201,17 +209,18 @@ main #Experiences {
     background-color: var(--dark);
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 10vw;
+    overflow-y: scroll;
 }
 
-main #Experiences .aboutParagraph {
+main #Experiences .experienceParagraph {
     width: 50vw;
     font-family: SourceSans;
     color: var(--bright);
     opacity: 0;
 }
 
-main #Experiences .aboutParagraph p {
+main #Experiences .experienceParagraph p {
     padding-bottom: 10px;
     border-bottom: 1px solid var(--beige);
     margin-top: 0;
@@ -223,5 +232,91 @@ main #Experiences h1 {
     color: var(--bright);
     font-size: 28px;
     margin-bottom: 8px;
-    border-bottom: 2px solid var(--red);
+    border-bottom: 2px solid var(--blue);
+}
+
+/* SKILLS PAGE */
+
+main #Skills{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+}
+
+main #Skills h1{
+}
+
+main #Skills .container{
+    display: block;
+    width: 75vw;
+    position: relative;
+    opacity: 0;
+}
+
+main #Skills .skillItem{
+    width: 19%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    height: 14.25vw;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--dark);
+    transition: 0.2s;
+    position: relative;
+    z-index: 10;
+    border: 2px solid black;
+}
+
+main #Skills .skillItem:hover{
+    background-color: var(--red);
+}
+
+main #Skills .skillItem.active{
+    transform: translateY(-50%);
+    background-color: var(--blue);
+    border: 0px solid black;
+}
+
+main #Skills .skillItem h1{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--bright);
+    filter: drop-shadow(0px 0px 2px black);
+    font-size: 2vw;
+}
+
+main #Skills .reveal{
+    position: absolute;
+    background-color: var(--red);
+    opacity: 0;
+    width: 100%;
+    height: inherit;
+    z-index:-5;
+    transition: 0.2s;
+    transform: translateY(0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main #Skills .reveal.active{
+    transform: translateY(100%);
+    opacity: 1;
+}
+
+main #Skills .subSkill{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: var(--bright);
+    font-family: Quicksand;
+    font-weight: bold;
+    filter: drop-shadow(0px 0px 1px black);
+    font-size: 2vw;
 }

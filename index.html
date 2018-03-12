@@ -13,13 +13,12 @@
 </head>
 <body>
     <nav>
-        <div class="navHeader"></div>
+        <div class="navHeader">Fr<span style="color: var(--red)">i</span>ck</div>
         <div class="navButtonContainer">
             <div data-offset="0" class="navButton selected"><p>Home</p></div>
             <div data-offset="1" class="navButton"><p>About</p></div>
             <div data-offset="2" class="navButton"><p>Experiences</p></div>
             <div data-offset="3" class="navButton"><p>Skills</p></div>
-            <div data-offset="4" class="navButton"><p>Contact</p></div>
         </div>
     </nav>
     <main>
@@ -30,7 +29,7 @@
                 <div class="quickContainer">
                     <div data-href="http://www.github.com/ImFalling" title="Visit my GitHub" class="quickContact gitHub"><img src="./resources/img/github.svg"/></div>
                     <div data-href="http://www.linkedin.com/in/jakob-f-569a11134/" title="Visit my LinkedIn" class="quickContact linkedIn"><img src="./resources/img/linkedin.png"/></div>
-                    <div title="Send me a direct Email" class="quickContact mail"><img src="./resources/img/gmail.svg"/></div>
+                    <a href="mailto:jakobaefrick@gmail.com?Subject=Contact" target="_top"><div title="Send me a direct Email" class="quickContact mail"><img src="./resources/img/gmail.svg"/></div></a>
                 </div>
             </div>
         </section>
@@ -61,32 +60,58 @@
         <section id="Experiences">
             <div>
                 <h1>Past Experiences...</h1>
-                <div class="aboutParagraph">
+                <div class="experienceParagraph">
                     <p>
-                        <b>Who am I?</b><br>
-                        I'm Jakob Frick, a 19-year-old passionate developer from <b><span style="color: #FF533D">Sweden</span></b>.
-                    </p>
-                    <p>
-                        <b>Why do I write code?</b><br>
-                        I've always strived to understand how things work. Whether it be in math, physics, or electronics, finding the reason behind why stuff works the way it does is very interesting to me, and when I first found the game <b><span style="color: #FF533D">Minecraft</span></b> back in 2010, I immediately wanted to know what was going on behind the scenes.
-                    </p>
-                    <p>
-                        <b>Where did I start?</b><br>
-                        I learned some basic Minecraft-environment specific <b><span style="color: #FF533D">Java</span></b> with the help of various modding forums, I managed to make a few mods, long since buried into obscurity. Despite the time I put into my mods, I never properly learned object orientation, actual Java features, or even basic programming. All I knew was Minecraft modding.
-                    </p>
-                    <p style="border-bottom: 0px solid white">
-                        <b>How did I develop my skills?</b><br>
-                        Turns out, there's a mod for Minecraft called <b><span style="color: #FF533D">ComputerCraft</span></b>. It adds computers to Minecraft, with a <b><span style="color: #FF533D">LUA</span></b>-based operating system integrated into them. This allows you to write your own programs and robots to perform various tasks for you. This is where I learned all about loops, arrays, functions, recursion, and a bunch of other cool basics.
-                        The pilgrimage from the whitespace based syntax in LUA to <b><span style="color: #FF533D">Javascript</span></b> syntax, was a long, confusing and frustrating one, and the advance to object oriented programming with <b><span style="color: #FF533D">C#</span></b>, even more so.
+                        <b>EatIt</b><br>
+                        I was approached by a startup company called EatIt at IBM's annual hackathon <span style="color: rgb(61, 113, 255)">HackYourWorld</span> in 2017, where I was asked to develop a health-focused webapp, which would later be ported to iOS and Android.
+                        Their interest was piqued when they heard me poking fun at IBM's AIO application platform <span style="color: rgb(61, 113, 255)">BlueMix</span>.
+                        I brought my friend along, and for about a year we worked our hardest to develop a full-scale webapp on our own terms. Unfamiliar with major industry standards at the time, such as Node-based environments with ReactJS, Angular, etc. we opted on a more classic approach, developing our own modular page-management framework, which we dubbed <span style="color: rgb(61, 113, 255)">"TimJUI"</span>.
+                        We managed to create a very promising, well-optimized, modular application using our own page framework, <span style="color: rgb(61, 113, 255)">Pure JS, jQuery, PHP and mySQL</span>, picking up a lot of knowledge along the way.
+                        I realized my future was not within startup companies, and left the company in November of 2017.
                     </p>
                 </div>
             </div>
         </section>
         <section id="Skills">
-            Skills
-        </section>
-        <section id="Contact">
-            Contact
+            <div class="container">
+                <div class="skillItem" title="Click Me!">
+                    <h1>Javascript</h1>
+                    <div class="reveal">
+                        <div class="subSkill">jQuery</div>
+                        <div class="subSkill">VueJS</div>
+                        <div class="subSkill">Tippy</div>
+                    </div>
+                </div>
+                <div class="skillItem" title="Click Me!">
+                    <h1>CSS</h1>
+                    <div class="reveal">
+                        <div class="subSkill">SASS</div>
+                    </div>
+                </div>
+                <div class="skillItem" title="Click Me!">
+                    <h1>C#</h1>
+                    <div class="reveal">
+                        <div class="subSkill">.NET</div>
+                        <div class="subSkill">MonoGame</div>
+                        <div class="subSkill">ASP.NET</div>
+                        <div class="subSkill">Unity#</div>
+                    </div>
+                </div>
+                <div class="skillItem" title="Click Me!">
+                    <h1>Java</h1>
+                    <div class="reveal">
+                        <div class="subSkill">JavaFX</div>
+                        <div class="subSkill">Swing</div>
+                        <div class="subSkill">Android</div>
+                    </div>
+                </div>
+                <div class="skillItem" title="Click Me!">
+                    <h1>LUA</h1>
+                    <div class="reveal">
+                        <div class="subSkill">LÖVE</div>
+                    </div>
+                </div>  
+            </div>
         </section>
     </main>
 </body>

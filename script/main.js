@@ -14,7 +14,7 @@ function initApp(){
     })
 
     //Quick Contact button setup
-    $(".quickContact").click(function(e){
+    $(".quickContact").not(".mail").click(function(e){
         window.open($(this).attr("data-href"), '_blank');
     });
 
@@ -22,6 +22,11 @@ function initApp(){
     tippy(".quickContact", {
         placement: "bottom",
         livePlacement: false,
+    });
+    
+    tippy(".skillItem", {
+        dynamicTitle: true,
+        placement: "bottom"
     });
 
     PageController = {
@@ -61,23 +66,46 @@ function initApp(){
 
     //EXPERIENCES PAGE
     PageController.addPage(new Page($("#Experiences"), 2, function(){
-        alert("init");
+        $(".experienceParagraph").animate({
+            "opacity": 1
+        }, 600);
     }, function(){
-        alert("deinit");
+        $(".experienceParagraph").animate({
+            "opacity": 0
+        }, 600);
     }));
 
     //SKILLS PAGE
     PageController.addPage(new Page($("#Skills"), 3, function(){
-        alert("init");
+        $("#Skills .container").animate({
+            "opacity": 1
+        }, 200);
     }, function(){
-        alert("deinit");
+        $("#Skills .container").animate({
+            "opacity": 0
+        }, 200);
+        $(".skillItem").removeClass("active");
+        $(".reveal").removeClass("active");
     }));
+
+    $("#Skills").find(".skillItem").click(function(e){
+        if(!($(this).hasClass("active"))){
+            $("#Skills").find(".skillItem").removeClass("active");
+            $("#Skills").find(".reveal").removeClass("active");
+            $(this).addClass("active");
+            $(this).find(".reveal").addClass("active");
+        }
+        else{
+            $(this).removeClass("active");
+            $(this).find(".reveal").removeClass("active")
+        }
+    });
 
     //CONTACT PAGE
     PageController.addPage(new Page($("#Contact"), 4, function(){
-        alert("init");
+
     }, function(){
-        alert("deinit");
+
     }));
 
     PageController.getPageById(0).Init();
